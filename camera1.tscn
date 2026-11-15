@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cddpt3o2y6kd" path="res://images/man/presedinte arestat.png" id="29_xcm6w"]
 [ext_resource type="Texture2D" uid="uid://dbojlko64pctr" path="res://images/med maro.png" id="30_bnc2v"]
 [ext_resource type="Texture2D" uid="uid://ci643m17e0jhv" path="res://images/final exit.png" id="30_xcm6w"]
+[ext_resource type="Script" uid="uid://by73i0jumbf2s" path="res://Scripts/final_wall.gd" id="36_by6go"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4gxm"]
 radius = 13.509256
@@ -81,11 +82,14 @@ size = Vector2(8.25, 80.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73ka5"]
 size = Vector2(34.5, 120.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7ojn"]
+size = Vector2(20, 122)
+
 [node name="Node2D" type="Node2D" unique_id=47104120]
 scale = Vector2(4, 4)
 
 [node name="Player" parent="." unique_id=224533771 instance=ExtResource("4_7he5d")]
-position = Vector2(518, 771.25)
+position = Vector2(-225, 15)
 scale = Vector2(0.25, 0.25)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=559444328]
@@ -136,6 +140,7 @@ position = Vector2(33, -20.25)
 texture = ExtResource("9_5jcg5")
 
 [node name="Camera2" type="Node2D" parent="." unique_id=1586442370]
+visible = false
 script = ExtResource("2_41dji")
 
 [node name="CorridorCrewCapat" type="Sprite2D" parent="Camera2" unique_id=642570446]
@@ -204,6 +209,7 @@ show_hide = true
 progress = 1
 
 [node name="Camera3" type="Node2D" parent="." unique_id=317708019]
+visible = false
 script = ExtResource("2_41dji")
 
 [node name="CorridorCrewCapat" type="Sprite2D" parent="Camera3" unique_id=1216575485]
@@ -259,6 +265,7 @@ show_hide = true
 progress = 1
 
 [node name="camera4" type="Node2D" parent="." unique_id=200113741]
+visible = false
 script = ExtResource("2_41dji")
 
 [node name="CorridorCrew" type="Sprite2D" parent="camera4" unique_id=296248895]
@@ -633,6 +640,7 @@ x_max = 355.0
 x_min = 206.0
 
 [node name="camera7" type="Node2D" parent="." unique_id=1381380168]
+visible = false
 position = Vector2(193.25, -193.75)
 script = ExtResource("2_41dji")
 show_hide = true
@@ -684,7 +692,7 @@ pill_id = 3
 shape = SubResource("CircleShape2D_3vnfy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=630084413]
-position = Vector2(519, 756.75)
+position = Vector2(-224, 0.5)
 
 [node name="Control" type="Control" parent="Camera2D" unique_id=165399679]
 layout_mode = 3
@@ -853,6 +861,14 @@ position = Vector2(-0.25, 9.25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D6/Area2D" unique_id=1736156971]
 position = Vector2(0.375, -5.375)
 shape = SubResource("RectangleShape2D_i2g14")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=390018376]
+position = Vector2(745.25, 770.5)
+script = ExtResource("36_by6go")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=1919253823]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_b7ojn")
 
 [connection signal="door_entered" from="Camera2/Doordown" to="camera4" method="force_showhide" binds= [false]]
 [connection signal="door_entered" from="Camera2/Doordown" to="camera5" method="force_showhide" binds= [true]]

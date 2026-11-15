@@ -28,7 +28,7 @@ func reset():
 	ready_to_reset = true
 
 func _input(event: InputEvent) -> void:
-	if ready_to_reset and event.is_action_pressed("interact"):
+	if ready_to_reset and event.is_action_pressed("respawn"):
 		ready_to_reset = false;
 		ProgressKeeper.trigger_reset.emit(ProgressKeeper.progress)
 

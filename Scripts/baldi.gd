@@ -48,4 +48,4 @@ func on_progress(progress:int):
 
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	out_for_player = true
