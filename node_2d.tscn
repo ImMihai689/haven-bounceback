@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://b4p2bhi65rbw"]
+
+[ext_resource type="PackedScene" uid="uid://bfv1de3068nd7" path="res://scenes/pause_menu.tscn" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://d1epbawkckcmt" path="res://images/corridor-crew.png" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://7gtguie0dfaj" path="res://images/corridor-crew-capat.png" id="2_d21ai"]
+[ext_resource type="Texture2D" uid="uid://5celox7rghu7" path="res://images/STICLA ARATOASA.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://b37xbw13sgdus" path="res://images/cutie pastile.png" id="4_0hol4"]
+[ext_resource type="PackedScene" uid="uid://c3y7ntsycyk83" path="res://scenes/player.tscn" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://djlkpn8pth67r" path="res://images/man/presedinte.png" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://bfkfcrgmk63ce" path="res://images/raft.png" id="9_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://djsfgkyd0fd0y" path="res://images/dulap.png" id="10_hqns4"]
+[ext_resource type="Texture2D" uid="uid://ctxgwl7tbjjkq" path="res://images/werewolf doctor2 DEFINITIVE.png" id="11_d2bti"]
+[ext_resource type="Texture2D" uid="uid://ca371kl8ffnvr" path="res://images/scaun rotile.png" id="11_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://4gaw7d3hy6pd" path="res://images/werewolf doctor3 DEFINITIVE.png" id="12_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://5wmijpxu1fhv" path="res://images/werewolf doctor1 DEFINITIVE.png" id="13_flf07"]
+[ext_resource type="Texture2D" uid="uid://bx18o3n5o0eh1" path="res://images/bird doctor 1.png" id="14_k73cj"]
+[ext_resource type="Texture2D" uid="uid://4e4rm7cv1brx" path="res://images/bird doctor 2.png" id="15_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://drna6cvjy81hb" path="res://images/bird doctor 3.png" id="16_flf07"]
+[ext_resource type="Texture2D" uid="uid://jj3s0nx3xc7g" path="res://images/table.png" id="17_k73cj"]
+[ext_resource type="Texture2D" uid="uid://vpyvpvoa0hyv" path="res://images/bed.png" id="18_k73cj"]
+
+[node name="Node2D" type="Node2D" unique_id=1742232454]
+scale = Vector2(4, 4)
+
+[node name="corridor1" type="Node2D" parent="." unique_id=240518555]
+position = Vector2(22.75, 129)
+
+[node name="CorridorCrew" type="Sprite2D" parent="corridor1" unique_id=381395937]
+texture = ExtResource("2_0e48y")
+
+[node name="CorridorCrew2" type="Sprite2D" parent="corridor1" unique_id=558048906]
+position = Vector2(128, 0)
+texture = ExtResource("2_0e48y")
+
+[node name="CorridorCrew3" type="Sprite2D" parent="corridor1" unique_id=667416710]
+position = Vector2(256, 0)
+texture = ExtResource("2_0e48y")
+
+[node name="CorridorCrew4" type="Sprite2D" parent="corridor1" unique_id=1802435935]
+position = Vector2(384, 0)
+texture = ExtResource("2_0e48y")
+
+[node name="CorridorCrew5" type="Sprite2D" parent="corridor1" unique_id=86552815]
+position = Vector2(512, 0)
+texture = ExtResource("2_0e48y")
+
+[node name="CorridorCrew6" type="Sprite2D" parent="corridor1" unique_id=1043861584]
+position = Vector2(640, 0)
+texture = ExtResource("2_0e48y")
+
+[node name="CorridorCrewCapat" type="Sprite2D" parent="corridor1" unique_id=704657282]
+position = Vector2(-128, 0)
+texture = ExtResource("2_d21ai")
+
+[node name="CorridorCrewCapat2" type="Sprite2D" parent="corridor1" unique_id=760382490]
+position = Vector2(768, 0)
+texture = ExtResource("2_d21ai")
+flip_h = true
+
+[node name="CorridorCrewCapat3" type="Sprite2D" parent="corridor1" unique_id=295753410]
+position = Vector2(896, 0)
+texture = ExtResource("2_d21ai")
+
+[node name="SticlaAratoasa" type="Sprite2D" parent="." unique_id=549796561]
+position = Vector2(211, 104)
+texture = ExtResource("3_epypp")
+
+[node name="CutiePastile" type="Sprite2D" parent="." unique_id=352737682]
+position = Vector2(235.75, 111)
+texture = ExtResource("4_0hol4")
+
+[node name="ScaunRotile" type="Sprite2D" parent="." unique_id=1806565952]
+position = Vector2(167.75, 154)
+texture = ExtResource("11_nr8wp")
+
+[node name="Presedinte" type="Sprite2D" parent="." unique_id=1919940361]
+position = Vector2(426.5, 118)
+texture = ExtResource("8_rj586")
+
+[node name="Player" parent="." unique_id=224533771 instance=ExtResource("6_kdubu")]
+z_index = 1000
+position = Vector2(297, 136.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1701601015]
+scale = Vector2(3.3333333, 3.3333333)
+
+[node name="Menu" parent="Player/Camera2D" unique_id=1326640712 instance=ExtResource("1_wtcfe")]
+offset_left = -240.00003
+offset_top = -135.00002
+offset_right = 239.99997
+offset_bottom = 134.99998
+
+[node name="Raft" type="Sprite2D" parent="." unique_id=621505729]
+position = Vector2(224, 131.75)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_ir8iy")
+
+[node name="Dulap" type="Sprite2D" parent="." unique_id=2029505339]
+position = Vector2(508.5, 122.000015)
+scale = Vector2(-1.268, 1.433)
+texture = ExtResource("10_hqns4")
+
+[node name="CutiePastile2" type="Sprite2D" parent="." unique_id=2026910198]
+position = Vector2(491.25, 117)
+texture = ExtResource("4_0hol4")
+
+[node name="CutiePastile3" type="Sprite2D" parent="." unique_id=359509948]
+position = Vector2(524.25, 93.25)
+texture = ExtResource("4_0hol4")
+
+[node name="WerewolfDoctor2Definitive" type="Sprite2D" parent="." unique_id=1173437186]
+position = Vector2(378.25, 135)
+texture = ExtResource("11_d2bti")
+
+[node name="WerewolfDoctor3Definitive" type="Sprite2D" parent="." unique_id=1577019432]
+position = Vector2(302.5, 133.25)
+texture = ExtResource("12_ta5nu")
+
+[node name="WerewolfDoctor1Definitive" type="Sprite2D" parent="." unique_id=292501355]
+position = Vector2(526.25, 136.75)
+texture = ExtResource("13_flf07")
+
+[node name="BirdDoctor1" type="Sprite2D" parent="." unique_id=67485640]
+position = Vector2(632.75, 136.5)
+texture = ExtResource("14_k73cj")
+
+[node name="BirdDoctor2" type="Sprite2D" parent="." unique_id=1221521993]
+position = Vector2(719, 140)
+texture = ExtResource("15_rjqkl")
+
+[node name="Table" type="Sprite2D" parent="." unique_id=59498216]
+position = Vector2(226.25, 157.25)
+texture = ExtResource("17_k73cj")
+
+[node name="Bed" type="Sprite2D" parent="." unique_id=524999706]
+position = Vector2(144.5, 159.5)
+texture = ExtResource("18_k73cj")
+
+[node name="BirdDoctor3" type="Sprite2D" parent="." unique_id=1370297560]
+position = Vector2(814, 140.25)
+texture = ExtResource("16_flf07")

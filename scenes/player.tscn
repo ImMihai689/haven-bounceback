@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c3y7ntsycyk83"]
+
+[ext_resource type="Script" uid="uid://cge15mphhdiib" path="res://Scripts/npc_mover.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cv37w7qe07ykh" path="res://Scripts/player_script.gd" id="1_qhqgy"]
+[ext_resource type="SpriteFrames" uid="uid://xcm36vn6v5e0" path="res://images/man/walkman.tres" id="2_qhqgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w4gxm"]
+height = 238.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vnfy"]
+radius = 19.0
+height = 260.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1361048759 node_paths=PackedStringArray("mover", "animated") groups=["player"]]
+script = ExtResource("1_qhqgy")
+mover = NodePath("Node")
+animated = NodePath("AnimatedSprite2D")
+
+[node name="Node" type="Node" parent="." unique_id=1593639479 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_g2els")
+animated_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1633533362]
+sprite_frames = ExtResource("2_qhqgy")
+animation = &"stand"
+autoplay = "stand"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1947843317 groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=801267878 groups=["player"]]
+shape = SubResource("CapsuleShape2D_w4gxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=967396740 groups=["player"]]
+shape = SubResource("CapsuleShape2D_3vnfy")

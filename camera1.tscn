@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://ded5yt3yuhqel"]
+
+[ext_resource type="Texture2D" uid="uid://d1epbawkckcmt" path="res://images/corridor-crew.png" id="1_dgm8g"]
+[ext_resource type="Texture2D" uid="uid://7gtguie0dfaj" path="res://images/corridor-crew-capat.png" id="2_rl1ui"]
+[ext_resource type="PackedScene" uid="uid://bfv1de3068nd7" path="res://scenes/pause_menu.tscn" id="3_1hput"]
+[ext_resource type="PackedScene" uid="uid://c3y7ntsycyk83" path="res://scenes/player.tscn" id="4_7he5d"]
+[ext_resource type="Texture2D" uid="uid://devd3m6jra3og" path="res://images/corridor-crew-end-nodoor.png" id="5_rl1ui"]
+[ext_resource type="Texture2D" uid="uid://vpyvpvoa0hyv" path="res://images/bed.png" id="6_7he5d"]
+[ext_resource type="Texture2D" uid="uid://bfkfcrgmk63ce" path="res://images/raft.png" id="7_0xc8c"]
+[ext_resource type="Texture2D" uid="uid://5celox7rghu7" path="res://images/STICLA ARATOASA.png" id="8_2gxl6"]
+[ext_resource type="Texture2D" uid="uid://djlkpn8pth67r" path="res://images/man/presedinte.png" id="9_5jcg5"]
+[ext_resource type="Script" uid="uid://d0fv1pa5pm21p" path="res://Scripts/camera_switch.gd" id="10_5jcg5"]
+[ext_resource type="Texture2D" uid="uid://b37xbw13sgdus" path="res://images/cutie pastile.png" id="10_8a38v"]
+[ext_resource type="Texture2D" uid="uid://ca371kl8ffnvr" path="res://images/scaun rotile.png" id="11_6cfim"]
+[ext_resource type="Texture2D" uid="uid://uywkrbiubamo" path="res://images/door1.png" id="11_ehax3"]
+[ext_resource type="Script" uid="uid://cjyaetv8jmunp" path="res://Scripts/pills.gd" id="11_yv8h1"]
+[ext_resource type="Texture2D" uid="uid://djsfgkyd0fd0y" path="res://images/dulap.png" id="12_8a38v"]
+[ext_resource type="Script" uid="uid://kbh084cto3fu" path="res://Scripts/vigniette.gd" id="14_2p02v"]
+[ext_resource type="Shader" uid="uid://dqjyfovgd5k5w" path="res://vigniette.gdshader" id="14_yuk6r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4gxm"]
+radius = 13.509256
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4gxm"]
+shader = ExtResource("14_yuk6r")
+shader_parameter/alpha = 1.0
+shader_parameter/dark = 0.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vnfy"]
+size = Vector2(9.5, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w7am"]
+size = Vector2(30, 118.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7py1c"]
+size = Vector2(26.5, 103.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ipp2"]
+size = Vector2(9.5, 76.75)
+
+[node name="Node2D" type="Node2D" unique_id=47104120]
+scale = Vector2(4, 4)
+
+[node name="Camera1" type="Node2D" parent="." unique_id=1680217131]
+
+[node name="CorridorCrew" type="Sprite2D" parent="Camera1" unique_id=169223559]
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrewCapat" type="Sprite2D" parent="Camera1" unique_id=143136086]
+position = Vector2(96, 0)
+texture = ExtResource("2_rl1ui")
+flip_h = true
+
+[node name="CorridorCrew2" type="Sprite2D" parent="Camera1" unique_id=1425949994]
+position = Vector2(-128, 0)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrewEndNodoor" type="Sprite2D" parent="Camera1" unique_id=1845650579]
+position = Vector2(-256, 0)
+texture = ExtResource("5_rl1ui")
+
+[node name="Bed" type="Sprite2D" parent="Camera1" unique_id=485255028]
+position = Vector2(-233.75, 25.25)
+scale = Vector2(1.273156, 1.273156)
+texture = ExtResource("6_7he5d")
+flip_h = true
+
+[node name="Raft" type="Sprite2D" parent="Camera1" unique_id=1126044070]
+position = Vector2(-86.50001, 10.5)
+scale = Vector2(1.4958806, 1.4958806)
+texture = ExtResource("7_0xc8c")
+
+[node name="SticlaAratoasa" type="Sprite2D" parent="Camera1" unique_id=1273483]
+position = Vector2(-101.00001, -10)
+scale = Vector2(0.5258075, 0.5258075)
+texture = ExtResource("8_2gxl6")
+
+[node name="Presedinte" type="Sprite2D" parent="Camera1" unique_id=1697100381]
+position = Vector2(33, -20.25)
+texture = ExtResource("9_5jcg5")
+
+[node name="Camera2" type="Node2D" parent="." unique_id=1586442370]
+visible = false
+
+[node name="CorridorCrewCapat" type="Sprite2D" parent="Camera2" unique_id=642570446]
+position = Vector2(224, 0)
+texture = ExtResource("2_rl1ui")
+
+[node name="CorridorCrew" type="Sprite2D" parent="Camera2" unique_id=845740744]
+position = Vector2(352, 0)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrew2" type="Sprite2D" parent="Camera2" unique_id=1360983865]
+position = Vector2(480, 0)
+texture = ExtResource("1_dgm8g")
+
+[node name="ScaunRotile" type="Sprite2D" parent="Camera2" unique_id=1554086912]
+position = Vector2(287.75, 22.25)
+texture = ExtResource("11_6cfim")
+
+[node name="Dulap" type="Sprite2D" parent="Camera2" unique_id=493403105]
+position = Vector2(394.00003, -5.5)
+scale = Vector2(1.3543359, 1.4075677)
+texture = ExtResource("12_8a38v")
+
+[node name="CutiePastile" type="Sprite2D" parent="Camera2" unique_id=485201224 node_paths=PackedStringArray("area")]
+position = Vector2(411.5, -10)
+texture = ExtResource("10_8a38v")
+script = ExtResource("11_yv8h1")
+area = NodePath("Area2D")
+pill_id = 1
+
+[node name="Area2D" type="Area2D" parent="Camera2/CutiePastile" unique_id=1662414074]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2/CutiePastile/Area2D" unique_id=619576202]
+shape = SubResource("CircleShape2D_w4gxm")
+
+[node name="CorridorCrewCapat2" type="Sprite2D" parent="Camera2" unique_id=437272476]
+position = Vector2(576, 0)
+texture = ExtResource("2_rl1ui")
+flip_h = true
+
+[node name="Camera3" type="Node2D" parent="." unique_id=317708019]
+visible = false
+
+[node name="CorridorCrewCapat" type="Sprite2D" parent="Camera3" unique_id=1216575485]
+position = Vector2(704, 0)
+texture = ExtResource("2_rl1ui")
+
+[node name="CorridorCrew" type="Sprite2D" parent="Camera3" unique_id=874995730]
+position = Vector2(832, 0)
+texture = ExtResource("1_dgm8g")
+
+[node name="Door1" type="Sprite2D" parent="Camera3" unique_id=667490077]
+position = Vector2(800.25, -8.25)
+texture = ExtResource("11_ehax3")
+
+[node name="CorridorCrewEndNodoor" type="Sprite2D" parent="Camera3" unique_id=415002345]
+position = Vector2(928, 0)
+texture = ExtResource("5_rl1ui")
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=630084413]
+
+[node name="Control" type="Control" parent="Camera2D" unique_id=165399679]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+
+[node name="CameraVigniette" type="ColorRect" parent="Camera2D/Control" unique_id=745497374 node_paths=PackedStringArray("text")]
+material = SubResource("ShaderMaterial_w4gxm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_2p02v")
+text = NodePath("../Label")
+
+[node name="Label" type="Label" parent="Camera2D/Control" unique_id=1231136794]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7058824, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "OVERDOSE."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Menu" parent="Camera2D/Control" unique_id=1326640712 instance=ExtResource("3_1hput")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" parent="." unique_id=224533771 instance=ExtResource("4_7he5d")]
+position = Vector2(-1, 14.5)
+scale = Vector2(0.25, 0.25)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=559444328]
+position = Vector2(4, -58)
+scale = Vector2(4, 4)
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1615469050 node_paths=PackedStringArray("camera1", "camera2", "area")]
+position = Vector2(160, 8)
+script = ExtResource("10_5jcg5")
+camera1 = NodePath("../Camera1")
+camera2 = NodePath("../Camera2")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=780449608]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=1540707509]
+position = Vector2(-0.25, 7.5)
+shape = SubResource("RectangleShape2D_3vnfy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1985053502]
+position = Vector2(-314.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=274944747]
+position = Vector2(5, 3.125)
+shape = SubResource("RectangleShape2D_8w7am")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1336014682]
+position = Vector2(989.5, 7.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1214582702]
+position = Vector2(-3.25, -2)
+shape = SubResource("RectangleShape2D_7py1c")
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=507767745 node_paths=PackedStringArray("camera1", "camera2", "area")]
+position = Vector2(641, 12)
+script = ExtResource("10_5jcg5")
+camera1 = NodePath("../Camera2")
+camera2 = NodePath("../Camera3")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Node2D2" unique_id=215272463]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Area2D" unique_id=501258585]
+position = Vector2(-1, 9.375)
+shape = SubResource("RectangleShape2D_5ipp2")

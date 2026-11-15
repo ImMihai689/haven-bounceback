@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://lprtntwyktcd"]
+
+[ext_resource type="Texture2D" uid="uid://bjkioah070r0d" path="res://scenes/linoleum_brown_diff_1k_normal.png" id="1_kgi2t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4gxm"]
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 0.31
+normal_texture = ExtResource("1_kgi2t")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pfn34"]
+material = SubResource("StandardMaterial3D_w4gxm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxecp"]
+
+[node name="CubTavan" type="StaticBody3D" unique_id=241954887]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=51452387]
+mesh = SubResource("BoxMesh_pfn34")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1068451163]
+shape = SubResource("BoxShape3D_nxecp")

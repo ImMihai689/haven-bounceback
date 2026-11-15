@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cproxs0d0j8vg"]
+
+[ext_resource type="Texture2D" uid="uid://pkdqrvry74q4" path="res://scenes/linoleum_brown_diff_1k.jpg" id="1_2ulyk"]
+[ext_resource type="Texture2D" uid="uid://bjkioah070r0d" path="res://scenes/linoleum_brown_diff_1k_normal.png" id="2_2b4w8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oib6f"]
+albedo_color = Color(0.8650986, 0.9157466, 0.919984, 1)
+albedo_texture = ExtResource("1_2ulyk")
+normal_enabled = true
+normal_scale = 0.31
+normal_texture = ExtResource("2_2b4w8")
+
+[sub_resource type="BoxMesh" id="BoxMesh_w4gxm"]
+material = SubResource("StandardMaterial3D_oib6f")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4gxm"]
+
+[node name="Cub" type="StaticBody3D" unique_id=1883509027]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1333898377]
+mesh = SubResource("BoxMesh_w4gxm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=212283079]
+shape = SubResource("BoxShape3D_w4gxm")

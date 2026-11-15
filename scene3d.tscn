@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bkw0v74slt7aq"]
+
+[ext_resource type="PackedScene" uid="uid://bfv1de3068nd7" path="res://scenes/pause_menu.tscn" id="1_1j1j0"]
+[ext_resource type="PackedScene" uid="uid://cproxs0d0j8vg" path="res://scenes/cub.tscn" id="2_iysy3"]
+
+[node name="Scene3d" type="Node3D" unique_id=358113811]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=919008667]
+transform = Transform3D(0.17104478, 0, 0.9852632, 0, 1, 0, -0.9852632, 0, 0.17104478, 0, 1.1082864, 0)
+
+[node name="Menu" parent="." unique_id=1326640712 instance=ExtResource("1_1j1j0")]
+
+[node name="Cub" parent="." unique_id=1883509027 instance=ExtResource("2_iysy3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022673607, -0.4988552, -0.004214227)

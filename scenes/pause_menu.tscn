@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bfv1de3068nd7"]
+
+[ext_resource type="Script" uid="uid://cdwcxj5wgaoru" path="res://Scripts/pause_menu.gd" id="1_joq3b"]
+[ext_resource type="Theme" uid="uid://cr2av8xglxes6" path="res://new_theme.tres" id="2_gpfhf"]
+
+[node name="Menu" type="Panel" unique_id=1326640712 node_paths=PackedStringArray("difficulty_settings")]
+visible = false
+z_index = 4096
+offset_right = 480.0
+offset_bottom = 270.0
+script = ExtResource("1_joq3b")
+difficulty_settings = NodePath("VBoxContainer2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1416699434]
+layout_mode = 0
+offset_left = 53.02
+offset_top = 51.99
+offset_right = 233.02
+offset_bottom = 189.99
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=1021005727]
+layout_mode = 2
+theme = ExtResource("2_gpfhf")
+text = "RESUME"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=2015172346]
+layout_mode = 2
+theme = ExtResource("2_gpfhf")
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=432434550]
+layout_mode = 2
+theme = ExtResource("2_gpfhf")
+text = "QUIT"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1168877741]
+visible = false
+layout_mode = 0
+offset_left = 250.0
+offset_top = 33.0
+offset_right = 449.0
+offset_bottom = 131.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=1739899320]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer" unique_id=917748324]
+layout_mode = 2
+text = "hard mode"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer2/HBoxContainer" unique_id=1000794165]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2" unique_id=1315748565]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2" unique_id=1761558852]
+layout_mode = 2
+text = "medium mode"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer2/HBoxContainer2" unique_id=884312666]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 50.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2" unique_id=2027067771]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer3" unique_id=446765054]
+layout_mode = 2
+text = "easy mode"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer2/HBoxContainer3" unique_id=861589039]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="button_up" from="VBoxContainer/Resume" to="." method="_on_resume_button_up"]
+[connection signal="button_up" from="VBoxContainer/Options" to="." method="_on_options_button_up"]
+[connection signal="button_up" from="VBoxContainer/Quit" to="." method="_on_quit_button_up"]
