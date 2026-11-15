@@ -36,14 +36,26 @@
 [ext_resource type="Texture2D" uid="uid://dbojlko64pctr" path="res://images/med maro.png" id="30_bnc2v"]
 [ext_resource type="Texture2D" uid="uid://ci643m17e0jhv" path="res://images/final exit.png" id="30_xcm6w"]
 [ext_resource type="Script" uid="uid://by73i0jumbf2s" path="res://Scripts/final_wall.gd" id="36_by6go"]
+[ext_resource type="Texture2D" uid="uid://bt0e1agpw5vq5" path="res://characters/afra spital.png" id="37_iti0l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4gxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2gxl6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21osl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4gxm"]
 radius = 13.509256
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5c1v7"]
 size = Vector2(44.5, 79.75)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_21osl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vnfy"]
 radius = 10.761621
@@ -130,14 +142,24 @@ position = Vector2(-86.50001, 10.5)
 scale = Vector2(1.4958806, 1.4958806)
 texture = ExtResource("7_0xc8c")
 
-[node name="SticlaAratoasa" type="Sprite2D" parent="Camera1" unique_id=1273483]
-position = Vector2(-101.00001, -10)
-scale = Vector2(0.5258075, 0.5258075)
-texture = ExtResource("8_2gxl6")
-
 [node name="Presedinte" type="Sprite2D" parent="Camera1" unique_id=1697100381]
 position = Vector2(33, -20.25)
 texture = ExtResource("9_5jcg5")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Camera1" unique_id=1151910882]
+position = Vector2(-95, -10)
+scale = Vector2(0.585, 0.585)
+sprite_frames = SubResource("SpriteFrames_w4gxm")
+autoplay = "default"
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="Camera1/AnimatedSprite2D2" unique_id=175038376]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera1/AnimatedSprite2D2/Area2D" unique_id=1801894384]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera1/AnimatedSprite2D2" unique_id=207208042]
+stream = ExtResource("20_g7ry8")
 
 [node name="Camera2" type="Node2D" parent="." unique_id=1586442370]
 visible = false
@@ -869,6 +891,18 @@ script = ExtResource("36_by6go")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=1919253823]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_b7ojn")
+
+[node name="AfraSpital" type="Sprite2D" parent="." unique_id=1863959491]
+position = Vector2(1622.25, 736)
+texture = ExtResource("37_iti0l")
+
+[node name="Label" type="Label" parent="." unique_id=1203778145]
+offset_left = 1665.75
+offset_top = 627.0
+offset_right = 1788.75
+offset_bottom = 682.0
+theme_override_font_sizes/font_size = 40
+text = "Sfârșit"
 
 [connection signal="door_entered" from="Camera2/Doordown" to="camera4" method="force_showhide" binds= [false]]
 [connection signal="door_entered" from="Camera2/Doordown" to="camera5" method="force_showhide" binds= [true]]
