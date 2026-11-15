@@ -1,8 +1,9 @@
 extends Node
 
-var progress:int
+var progress:int = 0
 
 signal trigger_progress()
+signal trigger_reset(progression:int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

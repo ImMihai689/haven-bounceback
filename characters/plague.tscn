@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://kr5dgc3fil5r"]
+
+[ext_resource type="SpriteFrames" uid="uid://ck58nouiutpri" path="res://characters/plague.tres" id="1_d6nii"]
+[ext_resource type="Script" uid="uid://btl3pmbpa7e1t" path="res://Scripts/baldi.gd" id="1_qt2l1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_02hms"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vnfy"]
+height = 62.0
+
+[node name="Plague" type="CharacterBody2D" unique_id=340385724 node_paths=PackedStringArray("timer", "area1", "area2", "animated", "animated2") groups=["enemy"]]
+script = ExtResource("1_qt2l1")
+timer = NodePath("Timer")
+area1 = NodePath("Area2D")
+area2 = NodePath("Area2D2")
+animated = NodePath("AnimatedSprite2D")
+animated2 = NodePath("AnimatedSprite2D2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=575862399 groups=["enemy"]]
+position = Vector2(60, 0)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1_d6nii")
+animation = &"2"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1964498295 groups=["enemy"]]
+position = Vector2(-60, 0)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1_d6nii")
+animation = &"2"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294017092 groups=["enemy"]]
+position = Vector2(1, 136)
+shape = SubResource("CircleShape2D_02hms")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=513412615]
+position = Vector2(-57, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1773869115]
+shape = SubResource("CapsuleShape2D_3vnfy")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=551120313]
+position = Vector2(58, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=566877192]
+shape = SubResource("CapsuleShape2D_3vnfy")
+
+[node name="Timer" type="Timer" parent="." unique_id=567401665]
+one_shot = true

@@ -52,8 +52,9 @@ func explosion_done():
 	get_tree().quit()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		animated_sprite.scale = Vector2(4, 4)
-		animated_sprite.play("bum")
-		parent.dead = true
-		animated_sprite.animation_finished.connect(explosion_done)
+	if not parent.dead:
+		if event.is_action_pressed("ui_accept"):
+			animated_sprite.scale = Vector2(4, 4)
+			animated_sprite.play("bum")
+			parent.dead = true
+			animated_sprite.animation_finished.connect(explosion_done)

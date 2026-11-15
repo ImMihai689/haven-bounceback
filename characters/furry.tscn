@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dh1wtrpqraqjf"]
+
+[ext_resource type="Script" uid="uid://c7y0lnd001guj" path="res://Scripts/varcalapte.gd" id="1_03aag"]
+[ext_resource type="SpriteFrames" uid="uid://ce1ryadnqobgi" path="res://characters/furry_frames.tres" id="1_wd0q0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w4gxm"]
+height = 98.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vnfy"]
+radius = 18.0
+height = 76.0
+
+[node name="Furry" type="CharacterBody2D" unique_id=1426266462 node_paths=PackedStringArray("timer", "player_kill", "animated")]
+script = ExtResource("1_03aag")
+timer = NodePath("Timer")
+player_kill = NodePath("Area2D")
+animated = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1835131255]
+sprite_frames = ExtResource("1_wd0q0")
+animation = &"1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2005697601]
+shape = SubResource("CapsuleShape2D_w4gxm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1523273882 groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1939845934 groups=["enemy"]]
+shape = SubResource("CapsuleShape2D_3vnfy")
+
+[node name="Timer" type="Timer" parent="." unique_id=2012411719]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="reset_attack"]

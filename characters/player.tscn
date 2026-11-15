@@ -5,14 +5,17 @@
 [ext_resource type="SpriteFrames" uid="uid://xcm36vn6v5e0" path="res://images/man/walkman.tres" id="2_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w4gxm"]
-height = 238.0
+radius = 15.0
+height = 250.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vnfy"]
 radius = 19.0
 height = 260.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1361048759 node_paths=PackedStringArray("mover", "animated") groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1361048759 node_paths=PackedStringArray("area", "mover", "animated") groups=["player"]]
+z_index = 3000
 script = ExtResource("1_qhqgy")
+area = NodePath("Area2D")
 mover = NodePath("Node")
 animated = NodePath("AnimatedSprite2D")
 

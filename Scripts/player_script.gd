@@ -1,13 +1,16 @@
 extends Node2D
 
+@export var area:Area2D
 @export var mover:NPCMover
 @export var animated:AnimatedSprite2D
 
 var dead:bool = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ProgressKeeper.trigger_progress.connect(die)
+	ProgressKeeper.trigger_reset.connect(on_reset)
 
 func _input(event: InputEvent) -> void:
 	if not dead:
@@ -22,3 +25,8 @@ func die():
 	dead = true
 	mover.move_npc(0)
 	animated.play("fall")
+
+func on_reset(_progress:int):
+	dead = false
+	animated.play("stand")
+	position = Vector2(-225, 15)

@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ck58nouiutpri"]
+
+[ext_resource type="Texture2D" uid="uid://drna6cvjy81hb" path="res://images/bird doctor 3.png" id="1_rkrmh"]
+[ext_resource type="Texture2D" uid="uid://4e4rm7cv1brx" path="res://images/bird doctor 2.png" id="2_71qjl"]
+[ext_resource type="Texture2D" uid="uid://bx18o3n5o0eh1" path="res://images/bird doctor 1.png" id="3_gt386"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rkrmh")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_71qjl")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gt386")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}]

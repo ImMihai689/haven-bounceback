@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ded5yt3yuhqel"]
 
 [ext_resource type="Texture2D" uid="uid://d1epbawkckcmt" path="res://images/corridor-crew.png" id="1_dgm8g"]
+[ext_resource type="Script" uid="uid://c7uj0qao2yb4a" path="res://Scripts/showhide.gd" id="2_41dji"]
 [ext_resource type="Texture2D" uid="uid://7gtguie0dfaj" path="res://images/corridor-crew-capat.png" id="2_rl1ui"]
 [ext_resource type="PackedScene" uid="uid://bfv1de3068nd7" path="res://scenes/pause_menu.tscn" id="3_1hput"]
-[ext_resource type="PackedScene" uid="uid://c3y7ntsycyk83" path="res://scenes/player.tscn" id="4_7he5d"]
+[ext_resource type="PackedScene" uid="uid://c3y7ntsycyk83" path="res://characters/player.tscn" id="4_7he5d"]
 [ext_resource type="Texture2D" uid="uid://devd3m6jra3og" path="res://images/corridor-crew-end-nodoor.png" id="5_rl1ui"]
 [ext_resource type="Texture2D" uid="uid://vpyvpvoa0hyv" path="res://images/bed.png" id="6_7he5d"]
 [ext_resource type="Texture2D" uid="uid://bfkfcrgmk63ce" path="res://images/raft.png" id="7_0xc8c"]
@@ -12,14 +13,42 @@
 [ext_resource type="Script" uid="uid://d0fv1pa5pm21p" path="res://Scripts/camera_switch.gd" id="10_5jcg5"]
 [ext_resource type="Texture2D" uid="uid://b37xbw13sgdus" path="res://images/cutie pastile.png" id="10_8a38v"]
 [ext_resource type="Texture2D" uid="uid://ca371kl8ffnvr" path="res://images/scaun rotile.png" id="11_6cfim"]
-[ext_resource type="Texture2D" uid="uid://uywkrbiubamo" path="res://images/door1.png" id="11_ehax3"]
 [ext_resource type="Script" uid="uid://cjyaetv8jmunp" path="res://Scripts/pills.gd" id="11_yv8h1"]
 [ext_resource type="Texture2D" uid="uid://djsfgkyd0fd0y" path="res://images/dulap.png" id="12_8a38v"]
+[ext_resource type="Texture2D" uid="uid://jj3s0nx3xc7g" path="res://images/table.png" id="12_vltkc"]
 [ext_resource type="Script" uid="uid://kbh084cto3fu" path="res://Scripts/vigniette.gd" id="14_2p02v"]
+[ext_resource type="Texture2D" uid="uid://ctpp4uf1o3mi0" path="res://images/EXIT.png" id="14_udfum"]
 [ext_resource type="Shader" uid="uid://dqjyfovgd5k5w" path="res://vigniette.gdshader" id="14_yuk6r"]
+[ext_resource type="Script" uid="uid://ch7aw20gnxf5x" path="res://Scripts/door.gd" id="15_7gibl"]
+[ext_resource type="Texture2D" uid="uid://b6snyoxu2gvwd" path="res://images/doordown.png" id="18_udfum"]
+[ext_resource type="Texture2D" uid="uid://csns86g231cc4" path="res://images/hell.png" id="19_41dji"]
+[ext_resource type="Texture2D" uid="uid://2t13e3huifcx" path="res://images/man/presedinte cal.png" id="19_miiji"]
+[ext_resource type="SpriteFrames" uid="uid://crtkxyn02ovy7" path="res://images/man/rgb_gamer_supps.tres" id="19_mxygj"]
+[ext_resource type="Script" uid="uid://d28ybsqsohgi6" path="res://Scripts/decoy_med.gd" id="20_1ci4i"]
+[ext_resource type="Texture2D" uid="uid://di4ir4qjn2ne3" path="res://images/med verde.png" id="20_21osl"]
+[ext_resource type="AudioStream" uid="uid://cxjsngwxjnr2i" path="res://other/Bottle Break.wav" id="20_g7ry8"]
+[ext_resource type="Texture2D" uid="uid://dxht7u35a4tn3" path="res://images/doorup.png" id="22_f0rdm"]
+[ext_resource type="Texture2D" uid="uid://uywkrbiubamo" path="res://images/door1.png" id="26_bmcfj"]
+[ext_resource type="PackedScene" uid="uid://kr5dgc3fil5r" path="res://characters/plague.tscn" id="27_yf3sm"]
+[ext_resource type="PackedScene" uid="uid://dh1wtrpqraqjf" path="res://characters/furry.tscn" id="28_1ci4i"]
+[ext_resource type="Texture2D" uid="uid://cydt0ap3mbvkb" path="res://images/man/presedinte iubit.png" id="28_bnc2v"]
+[ext_resource type="Texture2D" uid="uid://cddpt3o2y6kd" path="res://images/man/presedinte arestat.png" id="29_xcm6w"]
+[ext_resource type="Texture2D" uid="uid://dbojlko64pctr" path="res://images/med maro.png" id="30_bnc2v"]
+[ext_resource type="Texture2D" uid="uid://ci643m17e0jhv" path="res://images/final exit.png" id="30_xcm6w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4gxm"]
 radius = 13.509256
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c1v7"]
+size = Vector2(44.5, 79.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21osl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vnfy"]
+radius = 10.761621
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7vip"]
+size = Vector2(620.25, 117.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w4gxm"]
 shader = ExtResource("14_yuk6r")
@@ -27,6 +56,9 @@ shader_parameter/alpha = 1.0
 shader_parameter/dark = 0.0
 shader_parameter/inner_radius = 0.0
 shader_parameter/outer_radius = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_udfum"]
+blend_mode = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vnfy"]
 size = Vector2(9.5, 83)
@@ -40,10 +72,32 @@ size = Vector2(26.5, 103.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ipp2"]
 size = Vector2(9.5, 76.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4gxm"]
+size = Vector2(9, 86.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2g14"]
+size = Vector2(8.25, 80.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73ka5"]
+size = Vector2(34.5, 120.5)
+
 [node name="Node2D" type="Node2D" unique_id=47104120]
 scale = Vector2(4, 4)
 
+[node name="Player" parent="." unique_id=224533771 instance=ExtResource("4_7he5d")]
+position = Vector2(518, 771.25)
+scale = Vector2(0.25, 0.25)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=559444328]
+position = Vector2(4, -58)
+scale = Vector2(4, 4)
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
 [node name="Camera1" type="Node2D" parent="." unique_id=1680217131]
+script = ExtResource("2_41dji")
+show_hide = true
 
 [node name="CorridorCrew" type="Sprite2D" parent="Camera1" unique_id=169223559]
 texture = ExtResource("1_dgm8g")
@@ -82,7 +136,7 @@ position = Vector2(33, -20.25)
 texture = ExtResource("9_5jcg5")
 
 [node name="Camera2" type="Node2D" parent="." unique_id=1586442370]
-visible = false
+script = ExtResource("2_41dji")
 
 [node name="CorridorCrewCapat" type="Sprite2D" parent="Camera2" unique_id=642570446]
 position = Vector2(224, 0)
@@ -97,7 +151,7 @@ position = Vector2(480, 0)
 texture = ExtResource("1_dgm8g")
 
 [node name="ScaunRotile" type="Sprite2D" parent="Camera2" unique_id=1554086912]
-position = Vector2(287.75, 22.25)
+position = Vector2(478.75, 24.25)
 texture = ExtResource("11_6cfim")
 
 [node name="Dulap" type="Sprite2D" parent="Camera2" unique_id=493403105]
@@ -122,8 +176,35 @@ position = Vector2(576, 0)
 texture = ExtResource("2_rl1ui")
 flip_h = true
 
-[node name="Camera3" type="Node2D" parent="." unique_id=317708019]
+[node name="Doordown" type="Sprite2D" parent="Camera2" unique_id=1031490235]
+position = Vector2(273.25, -8)
+texture = ExtResource("18_udfum")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(810, 382)
+required_sanity = 1
+
+[node name="Area2D" type="Area2D" parent="Camera2/Doordown" unique_id=952856422]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2/Doordown/Area2D" unique_id=1655000833]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="Hell" type="Sprite2D" parent="Camera2" unique_id=496088084]
+position = Vector2(272.25, -52.75)
+texture = ExtResource("19_41dji")
+script = ExtResource("2_41dji")
+progress = 1
+
+[node name="Exit" type="Sprite2D" parent="Camera2" unique_id=1447160312]
 visible = false
+position = Vector2(274, -53)
+texture = ExtResource("14_udfum")
+script = ExtResource("2_41dji")
+show_hide = true
+progress = 1
+
+[node name="Camera3" type="Node2D" parent="." unique_id=317708019]
+script = ExtResource("2_41dji")
 
 [node name="CorridorCrewCapat" type="Sprite2D" parent="Camera3" unique_id=1216575485]
 position = Vector2(704, 0)
@@ -133,16 +214,477 @@ texture = ExtResource("2_rl1ui")
 position = Vector2(832, 0)
 texture = ExtResource("1_dgm8g")
 
-[node name="Door1" type="Sprite2D" parent="Camera3" unique_id=667490077]
-position = Vector2(800.25, -8.25)
-texture = ExtResource("11_ehax3")
-
 [node name="CorridorCrewEndNodoor" type="Sprite2D" parent="Camera3" unique_id=415002345]
 position = Vector2(928, 0)
 texture = ExtResource("5_rl1ui")
 flip_h = true
 
+[node name="Table" type="Sprite2D" parent="Camera3" unique_id=864826865]
+position = Vector2(720, 20.25)
+texture = ExtResource("12_vltkc")
+
+[node name="Table2" type="Sprite2D" parent="Camera3" unique_id=584720632]
+position = Vector2(864.75, 18.5)
+texture = ExtResource("12_vltkc")
+
+[node name="Table3" type="Sprite2D" parent="Camera3" unique_id=1268242755]
+position = Vector2(924.75, 18.5)
+texture = ExtResource("12_vltkc")
+
+[node name="Doordown2" type="Sprite2D" parent="Camera3" unique_id=1536888991]
+position = Vector2(794.5, -8)
+texture = ExtResource("18_udfum")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(-83, 382)
+required_sanity = 1
+
+[node name="Area2D" type="Area2D" parent="Camera3/Doordown2" unique_id=849758940]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera3/Doordown2/Area2D" unique_id=2015254917]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="Hell2" type="Sprite2D" parent="Camera3" unique_id=375644230]
+position = Vector2(793.75, -52.75)
+texture = ExtResource("19_41dji")
+script = ExtResource("2_41dji")
+progress = 1
+
+[node name="Exit2" type="Sprite2D" parent="Camera3" unique_id=1425815343]
+visible = false
+position = Vector2(795.5, -53)
+texture = ExtResource("14_udfum")
+script = ExtResource("2_41dji")
+show_hide = true
+progress = 1
+
+[node name="camera4" type="Node2D" parent="." unique_id=200113741]
+script = ExtResource("2_41dji")
+
+[node name="CorridorCrew" type="Sprite2D" parent="camera4" unique_id=296248895]
+position = Vector2(380.5, 367.25)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrew2" type="Sprite2D" parent="camera4" unique_id=1465092301]
+position = Vector2(508.5, 367.25)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrew3" type="Sprite2D" parent="camera4" unique_id=336472437]
+position = Vector2(252.5, 367.25)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrewCapat" type="Sprite2D" parent="camera4" unique_id=586622327]
+position = Vector2(125, 367.25)
+texture = ExtResource("2_rl1ui")
+
+[node name="CorridorCrewCapat2" type="Sprite2D" parent="camera4" unique_id=1413703430]
+position = Vector2(604.5, 367.25)
+texture = ExtResource("2_rl1ui")
+flip_h = true
+
+[node name="Table" type="Sprite2D" parent="camera4" unique_id=1088959887]
+position = Vector2(136.75, 388.75)
+texture = ExtResource("12_vltkc")
+
+[node name="Table2" type="Sprite2D" parent="camera4" unique_id=388700140]
+position = Vector2(193.25, 391.5)
+texture = ExtResource("12_vltkc")
+
+[node name="Dulap" type="Sprite2D" parent="camera4" unique_id=1305787377]
+position = Vector2(253.00002, 361.75)
+scale = Vector2(1.1827791, 1.2438258)
+texture = ExtResource("12_8a38v")
+
+[node name="Table3" type="Sprite2D" parent="camera4" unique_id=783714083]
+position = Vector2(315.5, 387.25)
+texture = ExtResource("12_vltkc")
+
+[node name="Table4" type="Sprite2D" parent="camera4" unique_id=1157026275]
+position = Vector2(380, 389.5)
+texture = ExtResource("12_vltkc")
+
+[node name="Table5" type="Sprite2D" parent="camera4" unique_id=1443306530]
+position = Vector2(446, 387)
+texture = ExtResource("12_vltkc")
+
+[node name="Table6" type="Sprite2D" parent="camera4" unique_id=1367533037]
+position = Vector2(510.25, 389.75)
+texture = ExtResource("12_vltkc")
+
+[node name="Doordown" type="Sprite2D" parent="camera4" unique_id=195604680]
+position = Vector2(574, 359.25)
+texture = ExtResource("18_udfum")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(700, 770)
+required_sanity = 2
+
+[node name="Area2D" type="Area2D" parent="camera4/Doordown" unique_id=557978989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/Doordown/Area2D" unique_id=1093745982]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="Hell" type="Sprite2D" parent="camera4" unique_id=2119442545]
+position = Vector2(574, 315.25)
+texture = ExtResource("19_41dji")
+script = ExtResource("2_41dji")
+progress = 2
+
+[node name="Exit" type="Sprite2D" parent="camera4" unique_id=1682516371]
+visible = false
+position = Vector2(574.75, 314.25)
+texture = ExtResource("14_udfum")
+script = ExtResource("2_41dji")
+show_hide = true
+progress = 2
+
+[node name="PresedinteCal" type="Sprite2D" parent="camera4" unique_id=629114569]
+position = Vector2(524.5, 345.25)
+texture = ExtResource("19_miiji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="camera4" unique_id=1893187815]
+position = Vector2(183.5, 372.25)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.6135135
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D" unique_id=11582366]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D/Area2D" unique_id=603937471]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D" unique_id=1569765344]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="camera4" unique_id=404402546]
+position = Vector2(138.5, 369.5)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D2" unique_id=1398134715]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D2/Area2D" unique_id=928055010]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D2" unique_id=1866370239]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="camera4" unique_id=1041931612]
+position = Vector2(238, 361.5)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D3" unique_id=1113562082]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D3/Area2D" unique_id=14216052]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D3" unique_id=1697794140]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="camera4" unique_id=1326500755]
+position = Vector2(268.25, 339.5)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D4" unique_id=2070200964]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D4/Area2D" unique_id=11186064]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D4" unique_id=1165275929]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="camera4" unique_id=784991036]
+position = Vector2(306, 369.75)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D5" unique_id=134935488]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D5/Area2D" unique_id=93916318]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D5" unique_id=401880343]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="camera4" unique_id=94297670]
+position = Vector2(330.5, 369)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D6" unique_id=1036526588]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D6/Area2D" unique_id=1248938338]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D6" unique_id=806780537]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="camera4" unique_id=1953066120]
+position = Vector2(395, 371)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D7" unique_id=2070750717]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D7/Area2D" unique_id=754064298]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D7" unique_id=1107524864]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="camera4" unique_id=266337276]
+position = Vector2(442.75, 369.25)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D8" unique_id=1240725713]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D8/Area2D" unique_id=619197910]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D8" unique_id=1012727727]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="camera4" unique_id=924748051]
+position = Vector2(496, 372)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D9" unique_id=1674826160]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D9/Area2D" unique_id=625106056]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D9" unique_id=289956976]
+stream = ExtResource("20_g7ry8")
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="camera4" unique_id=1266513255]
+position = Vector2(523, 370.5)
+sprite_frames = ExtResource("19_mxygj")
+autoplay = "default"
+frame_progress = 0.5753707
+script = ExtResource("20_1ci4i")
+
+[node name="Area2D" type="Area2D" parent="camera4/AnimatedSprite2D10" unique_id=603014764]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/AnimatedSprite2D10/Area2D" unique_id=562229903]
+shape = SubResource("CircleShape2D_21osl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="camera4/AnimatedSprite2D10" unique_id=1539828349]
+stream = ExtResource("20_g7ry8")
+
+[node name="MedVerde" type="Sprite2D" parent="camera4" unique_id=1289404346 node_paths=PackedStringArray("area")]
+position = Vector2(364.5, 371.25)
+texture = ExtResource("20_21osl")
+script = ExtResource("11_yv8h1")
+area = NodePath("Area2D")
+pill_id = 2
+
+[node name="Area2D" type="Area2D" parent="camera4/MedVerde" unique_id=515179895]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/MedVerde/Area2D" unique_id=548783954]
+shape = SubResource("CircleShape2D_3vnfy")
+
+[node name="Area2D" type="Area2D" parent="camera4" unique_id=68246165]
+position = Vector2(364.5, 359.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera4/Area2D" unique_id=657590925]
+position = Vector2(-0.375, 12)
+shape = SubResource("RectangleShape2D_v7vip")
+
+[node name="Furry" parent="camera4" unique_id=1426266462 node_paths=PackedStringArray("player", "player_detect") instance=ExtResource("28_1ci4i")]
+position = Vector2(365, 379.5)
+player = NodePath("../../Player")
+player_detect = NodePath("../Area2D")
+x_target = 365.0
+
+[node name="camera5" type="Node2D" parent="." unique_id=1960482846]
+script = ExtResource("2_41dji")
+show_hide = true
+
+[node name="CorridorCrewCapat" type="Sprite2D" parent="camera5" unique_id=2098658022]
+position = Vector2(732.5, 367.25)
+texture = ExtResource("2_rl1ui")
+
+[node name="CorridorCrewEndNodoor" type="Sprite2D" parent="camera5" unique_id=1083768654]
+position = Vector2(828.5, 367.25)
+texture = ExtResource("5_rl1ui")
+flip_h = true
+
+[node name="CorridorCrewCapat2" type="Sprite2D" parent="camera5" unique_id=671146226]
+position = Vector2(-3, 367.25)
+texture = ExtResource("2_rl1ui")
+flip_h = true
+
+[node name="CorridorCrewEndNodoor2" type="Sprite2D" parent="camera5" unique_id=1764005612]
+position = Vector2(-99, 367.25)
+texture = ExtResource("5_rl1ui")
+
+[node name="Doorup" type="Sprite2D" parent="camera5" unique_id=1850029675]
+position = Vector2(-83.75, 359.25)
+texture = ExtResource("22_f0rdm")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(270, 14)
+
+[node name="Area2D" type="Area2D" parent="camera5/Doorup" unique_id=1503527261]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera5/Doorup/Area2D" unique_id=929868240]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="Doorup2" type="Sprite2D" parent="camera5" unique_id=196500641]
+position = Vector2(810.5, 359.25)
+texture = ExtResource("22_f0rdm")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(795, 14)
+
+[node name="Area2D" type="Area2D" parent="camera5/Doorup2" unique_id=1275436005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera5/Doorup2/Area2D" unique_id=474774021]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="camera6" type="Node2D" parent="." unique_id=994876873]
+script = ExtResource("2_41dji")
+
+[node name="CorridorCrew" type="Sprite2D" parent="camera6" unique_id=474298500]
+position = Vector2(348.75, 755.25)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrew2" type="Sprite2D" parent="camera6" unique_id=1209095254]
+position = Vector2(476.75, 755.25)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrew3" type="Sprite2D" parent="camera6" unique_id=712687783]
+position = Vector2(220.75, 755.25)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrew4" type="Sprite2D" parent="camera6" unique_id=16059514]
+position = Vector2(604.5, 755.25)
+texture = ExtResource("1_dgm8g")
+
+[node name="CorridorCrewCapat" type="Sprite2D" parent="camera6" unique_id=2001282180]
+position = Vector2(92.75, 755.25)
+texture = ExtResource("2_rl1ui")
+
+[node name="CorridorCrewCapat2" type="Sprite2D" parent="camera6" unique_id=1130198534]
+position = Vector2(699.5, 755.25)
+texture = ExtResource("2_rl1ui")
+flip_h = true
+
+[node name="Doorup" type="Sprite2D" parent="camera6" unique_id=823269622]
+position = Vector2(700, 747.25)
+texture = ExtResource("22_f0rdm")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(572, 380)
+
+[node name="Area2D" type="Area2D" parent="camera6/Doorup" unique_id=1304211787]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera6/Doorup/Area2D" unique_id=56643217]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="Door1" type="Sprite2D" parent="camera6" unique_id=417638584]
+position = Vector2(345, 747.25)
+texture = ExtResource("26_bmcfj")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(216, 770)
+
+[node name="Area2D" type="Area2D" parent="camera6/Door1" unique_id=1572159844]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera6/Door1/Area2D" unique_id=1951878193]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="Door2" type="Sprite2D" parent="camera6" unique_id=487340822]
+position = Vector2(213.5, 747.25)
+texture = ExtResource("26_bmcfj")
+script = ExtResource("15_7gibl")
+final_destination = Vector2(345, 770)
+
+[node name="Area2D" type="Area2D" parent="camera6/Door2" unique_id=1109955698]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera6/Door2/Area2D" unique_id=206643625]
+position = Vector2(0, 0.125)
+shape = SubResource("RectangleShape2D_5c1v7")
+
+[node name="Plague" parent="camera6" unique_id=340385724 instance=ExtResource("27_yf3sm")]
+position = Vector2(215.25, 776)
+x_max = 355.0
+x_min = 206.0
+
+[node name="camera7" type="Node2D" parent="." unique_id=1381380168]
+position = Vector2(193.25, -193.75)
+script = ExtResource("2_41dji")
+show_hide = true
+
+[node name="CorridorCrewCapat3" type="Sprite2D" parent="camera7" unique_id=896911054]
+position = Vector2(634.25, 949)
+texture = ExtResource("2_rl1ui")
+
+[node name="CorridorCrewCapat4" type="Sprite2D" parent="camera7" unique_id=756751094]
+position = Vector2(730.25, 949)
+texture = ExtResource("2_rl1ui")
+flip_h = true
+
+[node name="CorridorCrewCapat5" type="Sprite2D" parent="camera7" unique_id=1000689395]
+position = Vector2(-228.5, 949)
+texture = ExtResource("2_rl1ui")
+flip_h = true
+
+[node name="CorridorCrewEndNodoor" type="Sprite2D" parent="camera7" unique_id=44623985]
+position = Vector2(-324.5, 949)
+texture = ExtResource("5_rl1ui")
+
+[node name="PresedinteIubit" type="Sprite2D" parent="camera7" unique_id=1963548591]
+position = Vector2(643, 930.75)
+texture = ExtResource("28_bnc2v")
+
+[node name="PresedinteArestat" type="Sprite2D" parent="camera7" unique_id=2046410943]
+position = Vector2(-236, 936.75)
+texture = ExtResource("29_xcm6w")
+
+[node name="Dulap" type="Sprite2D" parent="camera7" unique_id=451237971]
+position = Vector2(-316.75, 952.25)
+texture = ExtResource("12_8a38v")
+
+[node name="FinalExit" type="Sprite2D" parent="camera7" unique_id=1502252324]
+position = Vector2(735.5, 981.75)
+texture = ExtResource("30_xcm6w")
+
+[node name="MedMaro" type="Sprite2D" parent="camera7" unique_id=233789548 node_paths=PackedStringArray("area")]
+position = Vector2(-329, 951.5)
+texture = ExtResource("30_bnc2v")
+script = ExtResource("11_yv8h1")
+area = NodePath("Area2D")
+pill_id = 3
+
+[node name="Area2D" type="Area2D" parent="camera7/MedMaro" unique_id=1900306485]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera7/MedMaro/Area2D" unique_id=1500224414]
+shape = SubResource("CircleShape2D_3vnfy")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=630084413]
+position = Vector2(519, 756.75)
 
 [node name="Control" type="Control" parent="Camera2D" unique_id=165399679]
 layout_mode = 3
@@ -152,7 +694,8 @@ offset_top = -135.0
 offset_right = 240.0
 offset_bottom = 135.0
 
-[node name="CameraVigniette" type="ColorRect" parent="Camera2D/Control" unique_id=745497374 node_paths=PackedStringArray("text")]
+[node name="CameraVigniette" type="ColorRect" parent="Camera2D/Control" unique_id=745497374 node_paths=PackedStringArray("text", "filter")]
+z_index = 200
 material = SubResource("ShaderMaterial_w4gxm")
 layout_mode = 1
 anchors_preset = 15
@@ -162,8 +705,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("14_2p02v")
 text = NodePath("../Label")
+initial_filter = Color(0.16078432, 0.41568628, 0.28235295, 1)
+filter = NodePath("../ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Control" unique_id=610025582]
+z_index = 2000
+material = SubResource("CanvasItemMaterial_udfum")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.41568628, 0.28235295, 1)
 
 [node name="Label" type="Label" parent="Camera2D/Control" unique_id=1231136794]
+z_index = 2000
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -188,23 +745,11 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Player" parent="." unique_id=224533771 instance=ExtResource("4_7he5d")]
-position = Vector2(-1, 14.5)
-scale = Vector2(0.25, 0.25)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=559444328]
-position = Vector2(4, -58)
-scale = Vector2(4, 4)
-remote_path = NodePath("../../Camera2D")
-update_rotation = false
-update_scale = false
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1615469050 node_paths=PackedStringArray("camera1", "camera2", "area")]
+[node name="Node2D" type="Node2D" parent="." unique_id=1615469050 node_paths=PackedStringArray("camera1", "camera2")]
 position = Vector2(160, 8)
 script = ExtResource("10_5jcg5")
 camera1 = NodePath("../Camera1")
 camera2 = NodePath("../Camera2")
-area = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="Node2D" unique_id=780449608]
 
@@ -226,15 +771,100 @@ position = Vector2(989.5, 7.5)
 position = Vector2(-3.25, -2)
 shape = SubResource("RectangleShape2D_7py1c")
 
-[node name="Node2D2" type="Node2D" parent="." unique_id=507767745 node_paths=PackedStringArray("camera1", "camera2", "area")]
+[node name="Node2D2" type="Node2D" parent="." unique_id=507767745 node_paths=PackedStringArray("camera1", "camera2")]
 position = Vector2(641, 12)
 script = ExtResource("10_5jcg5")
 camera1 = NodePath("../Camera2")
 camera2 = NodePath("../Camera3")
-area = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="Node2D2" unique_id=215272463]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Area2D" unique_id=501258585]
 position = Vector2(-1, 9.375)
 shape = SubResource("RectangleShape2D_5ipp2")
+
+[node name="Node2D3" type="Node2D" parent="." unique_id=806798216 node_paths=PackedStringArray("camera1", "camera2")]
+position = Vector2(61.25, 388.25)
+script = ExtResource("10_5jcg5")
+camera1 = NodePath("../camera5")
+camera2 = NodePath("../camera4")
+
+[node name="Area2D" type="Area2D" parent="Node2D3" unique_id=1720435439]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/Area2D" unique_id=1122366925]
+position = Vector2(0, -1.75)
+shape = SubResource("RectangleShape2D_w4gxm")
+
+[node name="Node2D4" type="Node2D" parent="." unique_id=1313672264 node_paths=PackedStringArray("camera1", "camera2")]
+position = Vector2(668.25, 394.25)
+script = ExtResource("10_5jcg5")
+camera1 = NodePath("../camera4")
+camera2 = NodePath("../camera5")
+
+[node name="Area2D" type="Area2D" parent="Node2D4" unique_id=497084155]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/Area2D" unique_id=2071326747]
+position = Vector2(0.375, -5.375)
+shape = SubResource("RectangleShape2D_i2g14")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2015270920]
+position = Vector2(-161, 370.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=989695134]
+position = Vector2(7.25, -0.5)
+shape = SubResource("RectangleShape2D_73ka5")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1369351181]
+position = Vector2(877.25, 370.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1902566853]
+position = Vector2(7.25, -0.5)
+shape = SubResource("RectangleShape2D_73ka5")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=480369848]
+position = Vector2(-191.25, 759.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=501328833]
+position = Vector2(7.25, -0.5)
+shape = SubResource("RectangleShape2D_73ka5")
+
+[node name="Node2D5" type="Node2D" parent="." unique_id=879497438 node_paths=PackedStringArray("camera1", "camera2")]
+position = Vector2(29, 770)
+script = ExtResource("10_5jcg5")
+camera1 = NodePath("../camera7")
+camera2 = NodePath("../camera6")
+
+[node name="Area2D" type="Area2D" parent="Node2D5" unique_id=2060529266]
+position = Vector2(-0.25, 9.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D5/Area2D" unique_id=303282420]
+position = Vector2(0.375, -5.375)
+shape = SubResource("RectangleShape2D_i2g14")
+
+[node name="Node2D6" type="Node2D" parent="." unique_id=610637857 node_paths=PackedStringArray("camera1", "camera2")]
+position = Vector2(763.75, 776.75)
+script = ExtResource("10_5jcg5")
+camera1 = NodePath("../camera6")
+camera2 = NodePath("../camera7")
+
+[node name="Area2D" type="Area2D" parent="Node2D6" unique_id=104078544]
+position = Vector2(-0.25, 9.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D6/Area2D" unique_id=1736156971]
+position = Vector2(0.375, -5.375)
+shape = SubResource("RectangleShape2D_i2g14")
+
+[connection signal="door_entered" from="Camera2/Doordown" to="camera4" method="force_showhide" binds= [false]]
+[connection signal="door_entered" from="Camera2/Doordown" to="camera5" method="force_showhide" binds= [true]]
+[connection signal="door_entered" from="Camera3/Doordown2" to="camera4" method="force_showhide" binds= [false]]
+[connection signal="door_entered" from="Camera3/Doordown2" to="camera5" method="force_showhide" binds= [true]]
+[connection signal="door_entered" from="camera4/Doordown" to="camera6" method="force_showhide" binds= [true]]
+[connection signal="door_entered" from="camera4/Doordown" to="camera7" method="force_showhide" binds= [false]]
+[connection signal="body_entered" from="camera4/Area2D" to="camera4/Furry" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="camera4/Area2D" to="camera4/Furry" method="_on_area_2d_body_exited"]
+[connection signal="door_entered" from="camera5/Doorup" to="Camera2" method="force_showhide" binds= [true]]
+[connection signal="door_entered" from="camera5/Doorup" to="Camera3" method="force_showhide" binds= [false]]
+[connection signal="door_entered" from="camera5/Doorup2" to="Camera2" method="force_showhide" binds= [false]]
+[connection signal="door_entered" from="camera5/Doorup2" to="Camera3" method="force_showhide" binds= [true]]
+[connection signal="door_entered" from="camera6/Doorup" to="camera4" method="force_showhide" binds= [true]]
+[connection signal="door_entered" from="camera6/Doorup" to="camera5" method="force_showhide" binds= [false]]

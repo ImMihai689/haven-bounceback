@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7gtguie0dfaj" path="res://images/corridor-crew-capat.png" id="2_d21ai"]
 [ext_resource type="Texture2D" uid="uid://5celox7rghu7" path="res://images/STICLA ARATOASA.png" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://b37xbw13sgdus" path="res://images/cutie pastile.png" id="4_0hol4"]
-[ext_resource type="PackedScene" uid="uid://c3y7ntsycyk83" path="res://scenes/player.tscn" id="6_kdubu"]
+[ext_resource type="PackedScene" uid="uid://c3y7ntsycyk83" path="res://characters/player.tscn" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://djlkpn8pth67r" path="res://images/man/presedinte.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://bfkfcrgmk63ce" path="res://images/raft.png" id="9_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://djsfgkyd0fd0y" path="res://images/dulap.png" id="10_hqns4"]

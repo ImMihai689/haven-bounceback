@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ce1ryadnqobgi"]
+
+[ext_resource type="Texture2D" uid="uid://4gaw7d3hy6pd" path="res://images/werewolf doctor3 DEFINITIVE.png" id="1_pc724"]
+[ext_resource type="Texture2D" uid="uid://ctxgwl7tbjjkq" path="res://images/werewolf doctor2 DEFINITIVE.png" id="2_d6pu5"]
+[ext_resource type="Texture2D" uid="uid://5wmijpxu1fhv" path="res://images/werewolf doctor1 DEFINITIVE.png" id="3_bpeee"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pc724")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d6pu5")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bpeee")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}]

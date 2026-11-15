@@ -3,10 +3,11 @@ extends Node2D
 @export var camera1:Node2D
 @export var camera2:Node2D
 
-@export var area:Area2D
+var area:Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	area = get_child(0)
 	area.area_entered.connect(_area_enter)
 	area.area_exited.connect(_area_leave)
 
